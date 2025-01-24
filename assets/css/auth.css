@@ -1,0 +1,107 @@
+/* General Body Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    background-color: rgb(204, 112, 216);
+}
+
+/* Flexbox for Centering the Card */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures the container takes up full height of the screen */
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;  /* Set a max-width to control the card's size */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 30px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+/* Form Input Fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styling */
+.btn-submit {
+    height: 50px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Link Styling */
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .input-field {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        height: 45px;
+        font-size: 14px;
+    }
+}

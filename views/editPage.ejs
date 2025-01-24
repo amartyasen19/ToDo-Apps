@@ -1,0 +1,30 @@
+<header>
+  <!-- Header file for TODO Application -->
+  <div class="todoheading">
+      <h1>TODO APPLICATION</h1>
+  </div>
+  </header>
+
+<!-- Created a new Edit section as part of the innovation section -->
+<link rel="stylesheet" href="/css/home.css" />
+<div class="form_class">
+    <h2 class="color-white">EDIT YOUR DETAILS</h2>
+    <form action="/edit-todolist?id=<%= todolist.id %>" method="POST">
+      <div class="desc_Class">
+        <input type="text" name="desc" value="<%= todolist.desc %>" required>
+      </div>
+      <div class="select_and_input">
+        <select name="category" required>
+       <!--   <option value="<%= todolist.category %>" selected><%= todolist.category %></option> -->
+       <option value="" disabled selected><%= todolist.category %></option>
+          <option>Personal</option>
+          <option>Work</option>
+          <option>Cleaning</option>
+          <option>Others</option>
+        </select>
+        <input type="date" name="dueDate" value="<%= todolist.dueDate %>" required>
+      </div>
+      <button type="submit" class="edit-button">Update</button>
+    </form>
+  </div>
+  

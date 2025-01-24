@@ -1,0 +1,75 @@
+
+<header>
+    <!-- Header file for TODO Application -->
+    <div class="todoheading">
+        <h1>TODO APPLICATION</h1>
+    </div>
+    </header>
+
+<link rel="stylesheet" href="/css/home.css" />
+
+<div class="form_class">
+  <form action="/create_todo" method="POST">
+    <div class="desc_Class">
+      <input
+        type="textarea"
+        required
+        name="desc"
+        placeholder="What do you need to do"
+      />
+    </div>
+    <div class="select_and_input">
+      <select name="category" required>
+        <option value="" disabled selected>Select your option</option>
+        <option>Personal</option>
+        <option>Work</option>
+        <option>Cleaning</option>
+        <option>Others</option>
+      </select>
+      <input
+        class="datesValues"
+        type="date"
+        name="dueDate"
+        placeholder="Due date dd/mm/yyyy"
+        required
+      />
+    </div>
+    <button class="buttonDesign colorGrey" id="submitButton" type="submit">
+      <i class="fa fa-plus-square"> </i> Add Task
+    </button>
+    <button class="buttonDesign colorRed" id="deleteButton" type="submit">
+      <i class="fa fa-trash-o"></i> Delete Task
+    </button>
+  </form>
+</div>
+
+<!-- For displaying TODO lists -->
+<div>
+  <% for(let i of todoList) { let j=0; let newIds='descids'+j; %>
+  <div class="singleTask">
+    <input
+      type="checkbox"
+      name="delechack"
+      class="delechack"
+      onclick="checkedOrNot()"
+      uid="<%= i.id %>"
+    />
+    <div class="name_and_dueDate">
+      <p id="<%= i.id %>" uid="<%= i.id %>" class="dispdsc"><%= i.desc %></p>
+      <p id="<%= i.id + i.dueDate %>" class="dueDate"><%= i.dueDate %></p>
+    </div>
+    <div class="catesec"><%= i.category %></div>
+    <div class="editClass">
+      <a href="/editdata/?id=<%= i.id %>"  class="btn btn-edit">Edit</a>
+    </div>
+  </div>
+  <% j++; } %>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/js/script.js"></script>
